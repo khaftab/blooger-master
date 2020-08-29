@@ -1,0 +1,68 @@
+main {
+  .blog {
+    background: url("../assets/Abract01.png");
+    background-position: right;
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 65%;
+
+    .arrow {
+      @include flex-row(center, wrap);
+      i {
+        font-size: 30px;
+        padding: 0 12px;
+      }
+    }
+
+    .glider {
+      overflow: hidden; // This will remove the horizontal scroll bar form the firefox browser
+      padding-top: 6rem;
+      display: flex;
+      width: 100%;
+      height: max-content;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 40%;
+      margin: 3rem 2rem;
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .blog-title {
+        padding: 2rem 0;
+
+        .blog-btn {
+          border: 1px solid #fff;
+          border-radius: 2rem;
+          font-size: 1rem;
+          cursor: pointer;
+          outline: none;
+          padding: 0.7rem 2rem;
+          margin: 0.5rem;
+          background: $sky;
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// .disable-scrollbars {
+//   scrollbar-width: none; /* Firefox */
+//   -ms-overflow-style: none; /* IE 10+ */
+//   &::-webkit-scrollbar {
+//     width: 0px;
+//     background: transparent; /* Chrome/Safari/Webkit */
+//   }
+// }

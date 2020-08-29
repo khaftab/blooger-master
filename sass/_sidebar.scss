@@ -1,0 +1,84 @@
+main {
+  .site-content .sidebar {
+    .category-list {
+      margin-left: 2.5rem;
+
+      .list-item {
+        background: $sky;
+        padding: 0.4rem 1rem;
+        margin: 0.8rem 0;
+        border-radius: 3rem;
+        width: 70%;
+        @include flex-row(space-between, no-wrap);
+        white-space: nowrap;
+      }
+    }
+
+    .popular-post h2 {
+      margin-top: 8rem;
+    }
+
+    .popular-post .post-content {
+      .post-image {
+        padding: 1rem 0;
+        overflow: hidden;
+      }
+
+      .post-info {
+        padding: 0.4rem 0.1rem;
+        bottom: 5%;
+        left: 0%;
+        background: white;
+        white-space: nowrap;
+        border-radius: 0;
+        transform: translate(0, 0);
+      }
+
+      .post-title {
+        padding: 1rem 0;
+
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+    .newsletter {
+      padding-top: 3rem;
+
+      .form-element {
+        padding: 0.3rem 2rem;
+
+        .input-element {
+          width: 90%;
+          height: 1.9rem;
+          padding: 0.3rem 0.5rem;
+          font-size: 1rem;
+          margin-top: 1rem;
+        }
+
+        .form-btn {
+          border-radius: 0;
+          margin: 1rem 0;
+          padding: 0.8rem 33%;
+          background: $sky;
+        }
+      }
+    }
+
+    .popular-tags {
+      padding: 5rem 0;
+
+      .tags {
+        margin-top: 1.4rem;
+        @include flex-row(safe, wrap);
+      }
+
+      .tag {
+        background: $sky;
+        border-radius: 2rem;
+        padding: 0.4rem 1rem;
+        margin: 0.4rem 0.6rem;
+      }
+    }
+  }
+}

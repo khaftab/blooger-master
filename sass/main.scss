@@ -1,0 +1,85 @@
+@import "./config";
+@import "./nav";
+@import "./hero-section";
+@import "./blog-carousel";
+@import "./blog-post";
+@import "./sidebar";
+@import "./responsive";
+
+footer {
+  height: 100%;
+  background: $bg-color;
+  position: relative;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    > div {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 3rem 0.9rem;
+
+      h2 {
+        color: white;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .form-element {
+      background: rgb(0, 0, 0);
+      @include flex-row(safe, no-wrap);
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      input {
+        padding: 0.5rem 0.7rem;
+        background: transparent;
+        color: white;
+        // border: none;
+        font-size: 1rem;
+        width: max-content;
+      }
+
+      span {
+        background: $sky;
+        padding: 0.5rem 0.7rem;
+      }
+    }
+
+    .instagram > div img {
+      margin: 0.3rem 0.4rem;
+      object-fit: cover;
+      width: 25%;
+      height: 50%;
+    }
+
+    .follow {
+      i {
+        color: white;
+        padding: 0.2rem 0.3rem;
+      }
+    }
+  }
+
+  .copyright {
+    color: $text-grey;
+    @include flex-row(center, wrap);
+    padding-bottom: 0.9rem;
+  }
+
+  .move-up {
+    position: absolute;
+    top: 50%;
+    right: 6%;
+
+    span {
+      color: $midnight;
+
+      :hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
