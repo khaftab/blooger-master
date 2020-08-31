@@ -1,5 +1,5 @@
 main {
-  & .site-title {
+  .site-title {
     background: url("../assets/Background-image.png");
     background-size: cover;
     max-height: 110vh;
@@ -10,7 +10,7 @@ main {
     display: flex;
     justify-content: center;
 
-    & .site-background {
+    .site-background {
       padding-top: 10rem;
       text-align: center;
       color: $white;

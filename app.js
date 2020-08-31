@@ -1,10 +1,8 @@
 const burgur = document.querySelector(".burgur");
 const nav = document.querySelector(".nav-items");
 const navLink = document.querySelectorAll(".nav-item");
-const heroSection = document.querySelector(".hero-section");
 
 burgur.addEventListener("click", () => {
-  // heroSection.classList.toggle("hero-index");
   burgur.classList.toggle("toggle");
 
   nav.classList.toggle("active");
@@ -17,12 +15,6 @@ burgur.addEventListener("click", () => {
         index / 7 + 0.3
       }s`;
     }
-
-    nav.onanimationend = () => {
-      console.log("ended");
-    };
-
-    // burgur animation
   });
 });
 
