@@ -2,14 +2,17 @@ main {
   .blog {
     background: url("../assets/Abract01.png");
     background-position: right;
-    height: 100vh;
+    min-height: 100vh;
+    // max-height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
     background-size: 65%;
 
     .arrow {
+      margin-top: 25px;
       @include flex-row(center, wrap);
       i {
+        cursor: pointer;
         font-size: 30px;
         padding: 0 12px;
       }

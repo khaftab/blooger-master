@@ -1,18 +1,29 @@
-const burgur = document.querySelector(".burgur-menu");
-const navItem = document.querySelector(".nav-items");
-const links = document.querySelectorAll(".nav-item");
-const lineOne = document.querySelector(".line-one");
-const lineTwo = document.querySelector(".line-two");
-const lineThree = document.querySelector(".line-three");
+const burgur = document.querySelector(".burgur");
+const nav = document.querySelector(".nav-items");
+const navLink = document.querySelectorAll(".nav-item");
+const heroSection = document.querySelector(".hero-section");
 
 burgur.addEventListener("click", () => {
-  navItem.classList.toggle("open");
-  links.forEach((link) => {
-    link.classList.toggle("fade");
+  // heroSection.classList.toggle("hero-index");
+  burgur.classList.toggle("toggle");
+
+  nav.classList.toggle("active");
+
+  navLink.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = "";
+    } else {
+      link.style.animation = `navLinksFade 0.5s ease forwards ${
+        index / 7 + 0.3
+      }s`;
+    }
+
+    nav.onanimationend = () => {
+      console.log("ended");
+    };
+
+    // burgur animation
   });
-  lineOne.classList.add("line-one");
-  lineTwo.classList.toggle("line-two");
-  lineThree.classList.toggle("line-three");
 });
 
 new Glider(document.querySelector(".glider"), {

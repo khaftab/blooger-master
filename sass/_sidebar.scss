@@ -1,5 +1,6 @@
 main {
   .site-content .sidebar {
+    padding-left: 01rem;
     .category-list {
       margin-left: 2.5rem;
 
@@ -57,10 +58,15 @@ main {
         }
 
         .form-btn {
+          border: none;
+          outline: none;
+          width: 90%;
           border-radius: 0;
           margin: 1rem 0;
-          padding: 0.8rem 33%;
+          padding: 0.5rem 1rem;
           background: $sky;
+          text-align: center;
+          font-size: 1rem;
         }
       }
     }

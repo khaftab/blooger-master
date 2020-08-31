@@ -12,12 +12,16 @@
     }
   }
 
+  .sidebar .category-list .list-item {
+    width: 94% !important;
+  }
+
   .footer .container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 775px) {
   main .site-content {
     grid-template-columns: 1fr;
   }
@@ -28,9 +32,9 @@
 }
 
 @media only screen and (max-width: 520px) {
-  // main .blog {
-  //   height: 125vh;
-  // }
+  main .blog {
+    min-height: 125vh;
+  }
 
   main .site-content .posts .post-info {
     display: none;

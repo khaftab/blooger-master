@@ -1,123 +1,116 @@
-.nav {
-  @include flex-row(space-between, np-wrap);
+header {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  background: #fff;
+  position: relative;
   min-height: 10vh;
-  background: #5b78c7;
+  width: 100%;
+  @include flex-row(space-between, no-wrap);
+  padding: 0 1.2rem;
 
-  #{&}-items {
-    display: flex;
-  }
+  .nav-items {
+    @include flex-row(center, no-wrap);
 
-  #{&}-item {
-    padding: 0 1.3rem;
-    color: $white;
-  }
+    .nav-item {
+      padding: 0 1.3rem;
 
-  #{&}-brand {
-    color: $white;
-    margin-left: 1.5rem;
-    z-index: 1;
-
-    & h1 {
-      font-size: 2rem;
-    }
-  }
-
-  .social-items {
-    margin-right: 1.5rem;
-
-    & i {
-      color: $white;
-      padding: 0 0.3rem;
-      cursor: pointer;
       &:hover {
-        color: $midnight;
+        cursor: pointer;
       }
     }
   }
 
-  .burgur-menu {
+  .burgur {
     display: none;
-    margin-right: 1.5rem;
-    z-index: 1;
+    cursor: pointer;
 
-    & .line {
-      margin-bottom: 5px;
-      width: 29px;
+    > div {
+      width: 27px;
       height: 3px;
-      background: $white;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      background: #000;
+      margin: 5px 0;
+      transition: all 0.2s ease;
     }
+  }
+
+  .social-items i {
+    padding: 0 0.3rem;
+    cursor: pointer;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  .nav-brand h1 {
+    font-size: 33px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .nav {
-    padding: 0;
+.active {
+  transform: translateY(0) !important;
+  z-index: 10000;
+}
 
-    .nav-items {
-      margin-top: 90vh;
-      position: fixed;
-      background: #5b78c7;
-      height: 100vh;
-      width: 100%;
-      justify-content: space-around;
-      padding: 0;
-      align-items: center;
-      flex-direction: column;
-      clip-path: circle(100px at 100% -20%);
-      transition: all 1s ease-out;
-      pointer-events: none;
+@keyframes navLinksFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      &.open {
-        clip-path: circle(1200px at 100% -20%);
-        pointer-events: all;
-      }
-    }
+.toggle .line-one {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
 
-    .social-items {
-      display: none;
-    }
+.toggle .line-two {
+  opacity: 0;
+}
 
-    .burgur-menu {
-      @include flex-row(space-between, no-wrap);
-      flex-direction: column;
-    }
+.toggle .line-three {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
 
-    & .nav-item {
-      opacity: 1;
-    }
+.hero-index {
+  // this class will let the menu opne top over the content
+  position: relative;
+  z-index: -100 !important;
+}
 
-    & .nav-item:nth-child(1) {
-      animation: all 0.5s ease 0.2s;
-    }
-    & .nav-item:nth-child(2) {
-      animation: all 0.5s ease 0.4s;
-    }
-    & .nav-item:nth-child(3) {
-      animation: all 0.5s ease 0.6s;
-    }
-    & .nav-item:nth-child(4) {
-      animation: all 0.5s ease 0.8s;
-    }
-    & .nav-item:nth-child(5) {
-      animation: all 0.5s ease 1s;
-    }
+@media only screen and (max-width: 780px) {
+  .burgur {
+    display: block !important;
+  }
 
-    .rotate {
-      .line-one {
-        transform: rotateY(45deg);
-      }
+  .nav-items {
+    z-index: -10;
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    min-height: 90vh;
+    width: 100%;
+    @include flex-row(space-around, no-wrap);
+    flex-direction: column;
+    justify-content: space-around !important;
+    background: rgba(0, 0, 0, 0.94);
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in;
+  }
 
-      .line-two {
-        background: transparent;
-      }
+  nav .social-items {
+    display: none;
+  }
 
-      .line-three {
-        transform: rotateY(-45deg);
-      }
-    }
+  .nav-item {
+    font-size: 18px;
+    color: white;
+    opacity: 0;
   }
 }
