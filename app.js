@@ -48,3 +48,9 @@ new Glider(document.querySelector(".glider"), {
 });
 
 AOS.init();
+
+// Scroll to top
+
+const scrollToTop = () => {
+  window.scroll(0, 0)
+}
